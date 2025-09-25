@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Float & Positioning Demo</title>
+  <style>
+    /* Reset some defaults */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* 1. Fixed Header */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      z-index: 1000;
+    }
+
+    /* Add top margin so content isn't hidden behind fixed header */
+    .container {
+      margin-top: 80px;
+      padding: 20px;
+    }
+
+    /* 2. Float image left with text wrapping */
+    .float-img {
+      float: left;
+      width: 200px;
+      margin: 0 15px 15px 0;
+      border: 3px solid #ccc;
+    }
+
+    /* Footer clear */
+    footer {
+      clear: both;
+      background: #f4f4f4;
+      padding: 20px;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    /* 3. Sidebar and content layout using float */
+    .sidebar {
+      float: left;
+      width: 25%;
+      background: #e6e6e6;
+      padding: 15px;
+      margin-right: 20px;
+    }
+    .content {
+      overflow: hidden; /* ensures it clears float */
+      background: #fdfdfd;
+      padding: 15px;
+    }
+
+    /* 4. Relative & absolute positioning demo */
+    .position-demo {
+      position: relative;
+      height: 150px;
+      background: #f0f8ff;
+      margin-top: 20px;
+      border: 1px solid #ccc;
+    }
+    .absolute-box {
+      position: absolute;
+      top: 40px;
+      right: 20px;
+      background: tomato;
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Fixed Header -->
+  <header>
+    <h1>Float & Positioning Layout Demo</h1>
+  </header>
+
+  <div class="container">
+
+    <!-- Float image with text -->
+    <section>
+      <img src="https://via.placeholder.com/200" alt="Sample" class="float-img">
+      <p>
+        This is an example of text wrapping around a floated image. The image is floated left, 
+        and the text flows neatly around it. You can add more content to see how the wrapping works. 
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+        Suspendisse potenti. Praesent interdum nisl sed augue viverra, in volutpat nisl volutpat.
+      </p>
+    </section>
+
+    <!-- Sidebar with float -->
+    <section style="margin-top:40px;">
+      <div class="sidebar">
+        <h2>Sidebar</h2>
+        <p>Sidebar content placed here using float: left.</p>
+      </div>
+      <div class="content">
+        <h2>Main Content</h2>
+        <p>
+          This is the main content area. Notice how it doesn’t overlap the sidebar 
+          because we used float on the sidebar and ensured the content respects the space.
+        </p>
+      </div>
+    </section>
+
+    <!-- Relative & Absolute positioning -->
+    <section class="position-demo">
+      <p>This container is position: relative.</p>
+      <div class="absolute-box">
+        I’m absolutely positioned inside!
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Footer with clear -->
+  <footer>
+    <p>&copy; 2025 Float & Positioning Example</p>
+  </footer>
+
+</body>
+</html>
